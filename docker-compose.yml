@@ -1,14 +1,29 @@
-services:
-  postgres:
-    image: postgres:15
-    restart: always
-    container_name: final_project
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
-    ports:
-      - '5432:5432'
-    environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: root
-    
+# version: '3.9'
+
+# services:
+#   backend:
+#     container_name: 2mergency-pj
+#     build:
+#       context: ./ #어디서 파일 읽어올지 디렉토리 지정
+#       dockerfile: Dockerfile
+#     networks:
+#       - backend #지정한 network로 container간 통신
+#   postgres: # DB사용 시, 별도 DB정보 입력 필요
+#     image: postgres:15-alpine
+#     restart: always #문제 발생시 항상 재시작
+#     container_name: final_project
+#     env_file:
+#       - .env
+#     volumes:
+#       - ./postgres:/var/lib/postgresql/data
+#     ports:
+#       - '${DB_PORT}:${DB_PORT}'
+#     environment:
+#       POSTGRES_DB: ${DB_NAME}
+#       POSTGRES_USER: ${DB_USERNAME}
+#       POSTGRES_PASSWORD: ${DB_PASSWORD}
+#       PGDATA: /var/lib/postgresql/data
+
+# networks: # container간 통신방식
+#   backend:
+#     driver: bridge

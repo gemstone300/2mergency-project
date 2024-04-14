@@ -1,58 +1,55 @@
 # ###################
 # # 로컬 development 단계
 # ###################
-
-# # 베이스 이미지
-# FROM node:18-alpine AS development
+# # 베이스 이미지(alpine 이미지 사용 시, 1/3 SIZE축소)
+# FROM node:18-alpine AS development  
 
 # # app 디렉토리 생성
-# WORKDIR /usr/src/app
+# WORKDIR /var/app
 
+# COPY할 때, flag값을 더해 정확한 명령어 COPY 수행 여부 확인
 # # package.json과 package-lock.json 둘다 카피하기 위해서 와일드 카드를 사용합니다.
 # # 종속성을 가장 먼저 카피하는 이유?
 # # 코드가 변경될 때마다 npm i를 다시 실행하는 것을 방지합니다.
+# COPY package*.json ./
 # COPY --chown=node:node package*.json ./
 
-# # 종속성 설치
+# # 종속성 설치 : 배포 및 자동화 시, npm install보다 npm ci 권장
 # RUN npm ci
 
 # #소스 번들링
 # COPY --chown=node:node . .
 
 # # root 유저가 아닌 이미지의 node user 사용
+# USER 특정하지 않을 경우, 이미지는 root 권한 사용→ 보안 문제 상, USER 명령어 지정 
 # USER node
 
 # # RUN npm run start:dev
 # # CMD [ "ts-node","main.ts", "echo","🚀 server is running 🚀"]
 
-
 # ###################
 # # production 단계를 위한 build 단계
 # ###################
-
-
 # FROM node:18-alpine AS build
 # # ARG NODE_ENV=production
 # # ENV NODE_ENV=${NODE_ENV}
 
-# WORKDIR /usr/src/app
+# WORKDIR /var/app
 # COPY --chown=node:node package*.json ./
 
 # # npm run build를 실행하기 위해서 nest cli에 접근가능해야 합니다.
 # # nest cli는 dev 종속성입니다.
 # # 앞서 development 빌드에서 npm ci를 실행하여 모든 종속성을 설치했기 때문에
 # # development 이미지에서 build 이미지로 node_modules 디렉토리를 카피 할 수 있습니다.
-# COPY --chown=node:node --from=development /usr/src/app/node_modules ./node_modules
+# COPY --chown=node:node --from=development /home/ubuntu/2mergency-project/node_modules ./node_modules
 
 # COPY --chown=node:node . .
 
 # # production 번들을 생성할 build 커맨드 실행
 # RUN npm run build
 
-
 # # 노드 환경 변수 설정
 # ENV NODE_ENV production
-
 
 # # npm ci를 실행하여 존재하는 node_modeuls 디렉토리 제거
 # # --omit=development를 전달하여 production 종속성만 설치되도록 합니다.
@@ -64,12 +61,10 @@
 # ###################
 # # PRODUCTION 단계
 # ###################
-
-
 # FROM node:18-alpine AS production
 # # build 이미지로부터 production  이미지에 번들된 코드를 카피합니다.
-# COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
-# COPY --chown=node:node --from=build /usr/src/app/dist ./dist
+# COPY --chown=node:node --from=build /home/ubuntu/2mergency-project/node_modules ./node_modules
+# COPY --chown=node:node --from=build /home/ubuntu/2mergency-project/src/dist ./dist
 
 # # production build를 사용하여 서버를 시작합니다.
 # CMD ["node", "dist/main.js"]

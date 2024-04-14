@@ -1,5 +1,9 @@
 # /dockerignore
 Dockerfile
 .dockerignore
+.git
 node_modules
+npm-debug.log
 dist
+.env.development
+.env
