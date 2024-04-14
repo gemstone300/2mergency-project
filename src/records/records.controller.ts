@@ -7,10 +7,10 @@ import { UpdateRecordDto } from './dto/update-record.dto';
 export class RecordsController {
   constructor(private readonly recordsService: RecordsService) {}
 
-  @Post()
-  create(@Body() createRecordDto: CreateRecordDto) {
-    return this.recordsService.create(createRecordDto);
-  }
+  // @Post()
+  // create(@Body() createRecordDto: CreateRecordDto) {
+  //   return this.recordsService.create(createRecordDto);
+  // }
 
   @Get()
   findAll() {
@@ -22,10 +22,10 @@ export class RecordsController {
     return this.recordsService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateRecordDto: UpdateRecordDto) {
-    return this.recordsService.update(+id, updateRecordDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateRecordDto: UpdateRecordDto) {
+  //   return this.recordsService.update(+id, updateRecordDto);
+  // }
 
   @Delete(':id')
   remove(@Param('id') id: string) {

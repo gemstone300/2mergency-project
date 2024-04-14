@@ -1,14 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { GroupsService } from './groups.service';
 import { GroupsController } from './groups.controller';
-import { AppModule } from 'src/app.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule, getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Groups } from './entities/group.entity';
 
 describe('GroupsService', () => {
-  let Service: GroupsService;
+  //let Service: GroupsService;
 
   const mockGroupService = {
     create: jest.fn(),
@@ -25,15 +24,15 @@ describe('GroupsService', () => {
     category: string;
   }
   
-  const createUserDto: Groups = {
-    title: '그룹 제목',
-    content: '그룹 내용',
-    category: 'walk',
-  };
+  // const createUserDto: Groups = {
+  //   title: '그룹 제목',
+  //   content: '그룹 내용',
+  //   category: 'walk',
+  // };
   
   describe('GroupsService', () => {
     let groupsService;
-    let mockRepository : Repository<Groups>;
+    //let mockRepository : Repository<Groups>;
   
     beforeEach(async () => {
       jest.clearAllMocks();
@@ -54,8 +53,8 @@ describe('GroupsService', () => {
         ],
       }).compile();
   
-      Service = module.get<GroupsService>(GroupsService);
-      mockRepository = module.get<Repository<Groups>>(getRepositoryToken(Groups));
+      //Service = module.get<GroupsService>(GroupsService);
+      //mockRepository = module.get<Repository<Groups>>(getRepositoryToken(Groups));
     });
 
     afterEach(() => { 

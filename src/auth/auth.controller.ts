@@ -107,10 +107,9 @@ export class AuthController {
   @Post('accept')
   async userAccept(
     @Body('email') email: string,
-    @Body('token') token: string,
     @Res() res,
   ) {
-    await this.authService.userAccept(email, token);
+    await this.authService.userAccept(email);
     res.send('회원가입 이메일 인증을 완료했습니다.');
   }
   /** 사용자 이미지업로드 */

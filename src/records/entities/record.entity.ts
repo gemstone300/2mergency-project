@@ -1,5 +1,5 @@
 import { Users } from "src/users/entities/user.entity";
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({
     name : 'records'

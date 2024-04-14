@@ -50,7 +50,7 @@ export class ScheduleMembersController {
         groupId,
         scheduleId,
         userId,
-        updateScheduleMemberDto,
+        //updateScheduleMemberDto,
       );
 
     return newScheduleMember;

@@ -3,10 +3,8 @@ import {
   IsEmail,
   IsNotEmpty,
   IsString,
-  IsBoolean,
   IsOptional,
 } from 'class-validator';
-import { IsFile, MemoryStoredFile } from 'nestjs-form-data';
 
 export class SignUpDto {
   @IsString()

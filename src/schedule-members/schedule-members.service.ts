@@ -6,13 +6,10 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 import { ScheduleMembers } from './entities/schedule-member.entity'; // 가정: ScheduleMembers 엔티티 경로
 import { Repository } from 'typeorm';
-import { CreateScheduleMemberDto } from './dto/create-schedule-member.dto';
 import { UpdateScheduleMemberDto } from './dto/update-schedule-member.dto';
 import { Groups } from 'src/groups/entities/group.entity';
 import { Schedules } from 'src/schedules/entities/schedule.entity';
 import { GroupMembersService } from 'src/group-members/group-members.service';
-import { GroupMembers } from 'src/group-members/entities/group-member.entity';
-import { Users } from 'src/users/entities/user.entity';
 
 @Injectable()
 export class ScheduleMembersService {
@@ -34,7 +31,7 @@ export class ScheduleMembersService {
     groupId: number,
     scheduleId: number,
     userId: number,
-    updateScheduleMemberDto: UpdateScheduleMemberDto,
+    //updateScheduleMemberDto: UpdateScheduleMemberDto,
   ): Promise<any> {
     // 그룹이 있는지 먼저 확인하기
     const isGroup = await this.groupsRepository.findOne({ where: { groupId } });

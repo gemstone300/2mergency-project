@@ -165,7 +165,7 @@ export class AuthService {
     console.log('result', result);
   }
   /** 이메일 가입수락*/
-  async userAccept(email: string, token: string) {
+  async userAccept(email: string) {
     const existingToken = await this.invitesRepository.findOne({
       where: { email },
     });

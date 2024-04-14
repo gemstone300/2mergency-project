@@ -37,7 +37,7 @@ export class MailService {
         <p>인증토큰 : ${genToken.token} </p>
         <p>This link will expire on ${genToken.expires}.</p>`
       };
-      const result = await this.transporter.sendMail(sendOption);
+      await this.transporter.sendMail(sendOption);
       console.log('가입 토큰이 전송되었습니다');
 
       return genToken ;
