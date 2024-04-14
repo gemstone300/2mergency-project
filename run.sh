@@ -3,7 +3,7 @@
 # 의존성 설치
 npm install
 
-# PM2로 앱 관리
+# PM2로 앱 관리 ###
 # 이미 실행 중인 앱이 있으면 삭제
 pm2 delete 2mergency-project || true
 

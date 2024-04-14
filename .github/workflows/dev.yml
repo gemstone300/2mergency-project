@@ -1,4 +1,4 @@
-name: Nestjs CICD
+name: Nestjs CI
 
 on:
   push:
