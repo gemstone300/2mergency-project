@@ -1,14 +1,14 @@
-import { Test } from "@nestjs/testing";
-import { SchedulesService } from './schedules.service';
+// import { Test } from "@nestjs/testing";
+// import { SchedulesService } from './schedules.service';
 
-// 가짜 스케쥴 서비스를 만듦
-const mockSchedulesService = {
-  createSchedule: jest.fn(),
-  getAllSchedule: jest.fn(),
-  getOneSchedule: jest.fn(),
-  changeSchedule: jest.fn(),
-  deleteSchedule: jest.fn()
-}
+// // 가짜 스케쥴 서비스를 만듦
+// const mockSchedulesService = {
+//   createSchedule: jest.fn(),
+//   getAllSchedule: jest.fn(),
+//   getOneSchedule: jest.fn(),
+//   changeSchedule: jest.fn(),
+//   deleteSchedule: jest.fn()
+// }
 
 // 테스트 스위트 생성(테스트 블록들을 품을 친구임.)
 // 테스트할 대상은 schedulesService

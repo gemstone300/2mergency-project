@@ -2,7 +2,6 @@ import {
   Controller,
   Get,
   Post,
-  Body,
   Param,
   Delete,
   HttpCode,
@@ -11,8 +10,7 @@ import {
 } from '@nestjs/common';
 import { ScheduleMembersService } from './schedule-members.service';
 // import { UpdateScheduleMemberDto } from './dto/update-schedule-member.dto';
-import { GroupMembersService } from 'src/group-members/group-members.service';
-import { UpdateScheduleMemberDto } from './dto/update-schedule-member.dto';
+//import { GroupMembersService } from 'src/group-members/group-members.service';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { MemberRoles } from 'src/group-members/decorator/memberRoles.decorator';
 import { MemberRole } from 'src/group-members/types/groupMemberRole.type';
@@ -22,7 +20,7 @@ import { MemberRole } from 'src/group-members/types/groupMemberRole.type';
 export class ScheduleMembersController {
   constructor(
     private readonly scheduleMembersService: ScheduleMembersService,
-    private readonly groupMembersService: GroupMembersService,
+    //private readonly groupMembersService: GroupMembersService,
   ) {}
 
   /**

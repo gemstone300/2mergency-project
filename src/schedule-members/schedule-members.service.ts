@@ -6,7 +6,7 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 import { ScheduleMembers } from './entities/schedule-member.entity'; // 가정: ScheduleMembers 엔티티 경로
 import { Repository } from 'typeorm';
-import { UpdateScheduleMemberDto } from './dto/update-schedule-member.dto';
+//import { UpdateScheduleMemberDto } from './dto/update-schedule-member.dto';
 import { Groups } from 'src/groups/entities/group.entity';
 import { Schedules } from 'src/schedules/entities/schedule.entity';
 import { GroupMembersService } from 'src/group-members/group-members.service';
