@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 의존성 설치
+# 의존성 설치 #
 npm install
 
 # PM2로 앱 관리 ###
