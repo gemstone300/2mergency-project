@@ -2,9 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { GroupsService } from './groups.service';
 import { GroupsController } from './groups.controller';
 import { ConfigModule } from '@nestjs/config';
-import { TypeOrmModule, getRepositoryToken } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { Groups } from './entities/group.entity';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 describe('GroupsService', () => {
   //let Service: GroupsService;
@@ -18,11 +16,11 @@ describe('GroupsService', () => {
   };
   
   /** DTO - createUserInput */
-  interface Groups {
-    title: string;
-    content: string;
-    category: string;
-  }
+  // interface Groups {
+  //   title: string;
+  //   content: string;
+  //   category: string;
+  // }
   
   // const createUserDto: Groups = {
   //   title: '그룹 제목',
@@ -39,19 +37,19 @@ describe('GroupsService', () => {
       jest.resetAllMocks();
       jest.restoreAllMocks();
   
-      const module: TestingModule = await Test.createTestingModule({
-        imports : [ConfigModule.forRoot({ isGlobal: true }),
-          TypeOrmModule.forRoot()
-        ],
-        controllers: [GroupsController],
-        providers: [
-          GroupsService,
-          {
-            provide: GroupsService,
-            useValue: mockGroupService,
-          },
-        ],
-      }).compile();
+      // const module: TestingModule = await Test.createTestingModule({
+      //   imports : [ConfigModule.forRoot({ isGlobal: true }),
+      //     TypeOrmModule.forRoot()
+      //   ],
+      //   controllers: [GroupsController],
+      //   providers: [
+      //     GroupsService,
+      //     {
+      //       provide: GroupsService,
+      //       useValue: mockGroupService,
+      //     },
+      //   ],
+      // }).compile();
   
       //Service = module.get<GroupsService>(GroupsService);
       //mockRepository = module.get<Repository<Groups>>(getRepositoryToken(Groups));
