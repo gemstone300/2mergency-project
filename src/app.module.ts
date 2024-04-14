@@ -23,7 +23,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AwsModule } from './aws/aws.module';
 import { NestjsFormDataModule } from 'nestjs-form-data';
-//import * as fs from 'fs'
 
 const typeOrmModuleOptions = {
   useFactory: async (
@@ -42,9 +41,6 @@ const typeOrmModuleOptions = {
     ssl: {
         rejectUnauthorized: false
     }
-    //ssl: process.env.NODE_ENV === 'prod' ? {
-    //  ca: fs.readFileSync('global-bundle.pem')
-    //} : false
   }),
   inject: [ConfigService],
 };
