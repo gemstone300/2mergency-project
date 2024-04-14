@@ -19,11 +19,11 @@ describe('schedulesService', () => {
   // 테스팅 모듈 생성
   // Testing 모듈을 만들기 위한 메서드는 Test클래스가 제공을 해줌
   beforeEach(async () => {
-    const moduleRef = await Test.createTestingModule({
-      providers:[
-        {provide: SchedulesService, useValue: mockSchedulesService}
-      ]
-    }).compile()
+    // const moduleRef = await Test.createTestingModule({
+    //   providers:[
+    //     {provide: SchedulesService, useValue: mockSchedulesService}
+    //   ]
+    // }).compile()
 
     //schedulesService = moduleRef.get<SchedulesService>(SchedulesService)
     // schedule = {

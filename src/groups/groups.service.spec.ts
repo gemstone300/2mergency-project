@@ -1,19 +1,19 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { GroupsService } from './groups.service';
-import { GroupsController } from './groups.controller';
-import { ConfigModule } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
+// import { Test, TestingModule } from '@nestjs/testing';
+// import { GroupsService } from './groups.service';
+// import { GroupsController } from './groups.controller';
+// import { ConfigModule } from '@nestjs/config';
+// import { TypeOrmModule } from '@nestjs/typeorm';
 
 describe('GroupsService', () => {
   //let Service: GroupsService;
 
-  const mockGroupService = {
-    create: jest.fn(),
-    findAll: jest.fn(),
-    findOne: jest.fn(),
-    update: jest.fn(),
-    remove: jest.fn(),
-  };
+  // const mockGroupService = {
+  //   create: jest.fn(),
+  //   findAll: jest.fn(),
+  //   findOne: jest.fn(),
+  //   update: jest.fn(),
+  //   remove: jest.fn(),
+  // };
   
   /** DTO - createUserInput */
   // interface Groups {

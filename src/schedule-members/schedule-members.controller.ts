@@ -42,7 +42,7 @@ export class ScheduleMembersController {
     @Param('groupId') groupId: number,
     @Param('scheduleId') scheduleId: number,
     @Param('userId') userId: number,
-    @Body() updateScheduleMemberDto: UpdateScheduleMemberDto,
+    //@Body() updateScheduleMemberDto: UpdateScheduleMemberDto,
   ) {
     // 사용자가 그룹 멤버라면, 스케줄 멤버로 등록하기
     const newScheduleMember =
